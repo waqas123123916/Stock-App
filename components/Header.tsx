@@ -4,7 +4,7 @@ import React from 'react'
 import NavItems from './NavItems'
 import UserDropdownMenu from './UserDropdownMenu'
 
-const Header = () => {
+const Header = ({user}:{user:User}) => {
   return (
     <header className='sticky top-0 header'>
         <div className="container header-wrapper">
@@ -14,7 +14,7 @@ const Header = () => {
                 <NavItems/>
             </nav>
 
-            <UserDropdownMenu />
+            <UserDropdownMenu user={user}  />
         </div>
 
     </header>

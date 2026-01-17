@@ -18,18 +18,17 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { useRouter } from "next/navigation";
 import NavItems from "./NavItems";
+import { signOut } from "@/lib/actions/auth.actions";
 
-const UserDropdownMenu = () => {
+const UserDropdownMenu = ({user}:{user:User}) => {
   const router = useRouter();
 
   const handleSignOut = async () => {
+    await signOut();
     router.push("/sign-in");
   };
 
-  const user = {
-    name: "usma",
-    email: "usman@gmail.com",
-  };
+ 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -76,7 +75,7 @@ const UserDropdownMenu = () => {
         </DropdownMenuItem>
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={handleSignOut} >
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
