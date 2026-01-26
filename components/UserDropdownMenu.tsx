@@ -70,7 +70,7 @@ const UserDropdownMenu = ({user}:{user:User}) => {
         <DropdownMenuItem className="sm:hidden">
           <DropdownMenuSeparator />
           <nav>
-            <NavItems />
+            <NavItems initialStocks={[]} />
           </nav>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
